@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+<script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+console.log(moment().format('MMMM Do YYYY, h:mm:ss a')); // =>  September 8th 2015, 9:45:36 pm
+console.log(moment().format('dddd'));// => Tuesday
+console.log(moment().format("MMM Do YY"));// => Sep 8th 15
+console.log(moment().format('YYYY [escaped] YYYY')); // => 2015 escaped 2015
+console.log(moment().format()); //=> 2015-09-08T21:46:43+08:00
+
+console.log(moment("20111031", "YYYYMMDD").fromNow()); //=> 4 years ago
+console.log(moment("20120620", "YYYYMMDD").fromNow()); //=>3 years ago
+console.log(moment().startOf('day').fromNow()); //=>a day ago
+console.log(moment().endOf('day').fromNow()); //=>in 2 hours
+console.log(moment().startOf('hour').fromNow()); //=>an hour ago
+
+console.log(moment().subtract(10, 'days').calendar()); //=>08/29/2015
+console.log(moment().subtract(6, 'days').calendar()); //=>Last Wednesday at 9:50 PM
+console.log(moment().subtract(3, 'days').calendar()); //=>Last Saturday at 9:50 PM
+console.log(moment().subtract(1, 'days').calendar()); //=>Yesterday at 9:50 PM
+console.log(moment().calendar()); //=>Today at 9:50 PM
+console.log(moment().add(1, 'days').calendar()); //=>Tomorrow at 9:51 PM
+console.log(moment().add(3, 'days').calendar()); //=>Friday at 9:51 PM
+console.log(moment().add(10, 'days').calendar()); //=>09/18/2015
+</script>
+</body>
+</html>
